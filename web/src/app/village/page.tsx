@@ -48,7 +48,7 @@ const locations = [
     imgH: 200,
     x: "11.1%",
     y: "54.7%",
-    href: "#",
+    href: "/village/my-home",
   },
   {
     name: "作品展覽廊",
