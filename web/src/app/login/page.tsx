@@ -1,3 +1,6 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { DoorOpen, ArrowLeft } from "lucide-react";
@@ -5,6 +8,13 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 export default function LoginPage() {
+  const router = useRouter();
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push("/village");
+  };
+
   return (
     <div className="flex min-h-screen bg-warm-bg">
       {/* Left - Village Illustration */}
@@ -36,7 +46,7 @@ export default function LoginPage() {
 
       {/* Right - Login Form */}
       <div className="flex flex-col items-center justify-center w-full lg:w-[560px] shrink-0 px-6 py-12 lg:px-15">
-        <div className="flex flex-col gap-8 w-full max-w-[400px]">
+        <form onSubmit={handleLogin} className="flex flex-col gap-8 w-full max-w-[400px]">
           {/* Form Header */}
           <div className="flex flex-col gap-2">
             <DoorOpen size={32} className="text-brand" />
@@ -76,7 +86,10 @@ export default function LoginPage() {
           </div>
 
           {/* Login button */}
-          <Button className="w-full rounded-full bg-brand hover:bg-brand-dark text-white py-3.5 h-auto text-base font-medium">
+          <Button
+            type="submit"
+            className="w-full rounded-full bg-brand hover:bg-brand-dark text-white py-3.5 h-auto text-base font-medium"
+          >
             進入村莊
           </Button>
 
@@ -106,7 +119,7 @@ export default function LoginPage() {
             <ArrowLeft size={16} />
             返回首頁
           </Link>
-        </div>
+        </form>
       </div>
     </div>
   );
