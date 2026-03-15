@@ -156,10 +156,10 @@ function CoreValues() {
 
 /* ───────── Talent Exchange ───────── */
 const exchanges = [
-  { skill1: "編織", skill2: "攝影", s1Color: "#2AABB3", s1Bg: "#E5F5F7", s2Color: "#3D9BA3", s2Bg: "#D0ECF0" },
-  { skill1: "冥想", skill2: "吉他", s1Color: "#3D9BA3", s1Bg: "#D0ECF0", s2Color: "#2AABB3", s2Bg: "#E5F5F7" },
-  { skill1: "瑜伽", skill2: "語言", s1Color: "#2AABB3", s1Bg: "#D5EEF0", s2Color: "#5BBCC3", s2Bg: "#D5EEF0" },
-  { skill1: "書法", skill2: "舞蹈", s1Color: "#2AABB3", s1Bg: "#E5F5F7", s2Color: "#3D9BA3", s2Bg: "#D0ECF0" },
+  { avatar1: "/avatars/ex1-a.jpg", avatar2: "/avatars/ex1-b.jpg", skill1: "編織", skill2: "攝影", s1Color: "#2AABB3", s1Bg: "#E5F5F7", s2Color: "#3D9BA3", s2Bg: "#D0ECF0" },
+  { avatar1: "/avatars/ex2-a.jpg", avatar2: "/avatars/ex2-b.jpg", skill1: "冥想", skill2: "吉他", s1Color: "#3D9BA3", s1Bg: "#D0ECF0", s2Color: "#2AABB3", s2Bg: "#E5F5F7" },
+  { avatar1: "/avatars/ex3-a.jpg", avatar2: "/avatars/ex3-b.jpg", skill1: "瑜伽", skill2: "語言", s1Color: "#2AABB3", s1Bg: "#D5EEF0", s2Color: "#5BBCC3", s2Bg: "#D5EEF0" },
+  { avatar1: "/avatars/ex4-a.jpg", avatar2: "/avatars/ex4-b.jpg", skill1: "書法", skill2: "舞蹈", s1Color: "#2AABB3", s1Bg: "#E5F5F7", s2Color: "#3D9BA3", s2Bg: "#D0ECF0" },
 ];
 
 function TalentExchange() {
@@ -183,10 +183,22 @@ function TalentExchange() {
             className="flex flex-col items-center gap-4 md:gap-5 rounded-2xl bg-white p-4 md:p-6"
           >
             <div className="flex items-center gap-3 md:gap-4">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-brand-medium" />
+              <Image
+                src={ex.avatar1}
+                alt=""
+                width={48}
+                height={48}
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover"
+              />
               <ArrowLeftRight size={18} className="text-brand md:hidden" />
               <ArrowLeftRight size={20} className="text-brand hidden md:block" />
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-brand-light" />
+              <Image
+                src={ex.avatar2}
+                alt=""
+                width={48}
+                height={48}
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover"
+              />
             </div>
             <div className="flex items-center gap-2 md:gap-3">
               <span
@@ -212,10 +224,10 @@ function TalentExchange() {
 
 /* ───────── Community Preview ───────── */
 const members = [
-  { name: "小雨", city: "台北", give: "水彩畫", take: "花藝" },
-  { name: "Amber", city: "台中", give: "瑜伽", take: "陶藝" },
-  { name: "心寧", city: "高雄", give: "攝影", take: "吉他" },
-  { name: "Luna", city: "花蓮", give: "冥想", take: "手作蠟燭" },
+  { name: "小雨", city: "台北", give: "水彩畫", take: "花藝", avatar: "/avatars/p1.jpg" },
+  { name: "Amber", city: "台中", give: "瑜伽", take: "陶藝", avatar: "/avatars/p2.jpg" },
+  { name: "心寧", city: "高雄", give: "攝影", take: "吉他", avatar: "/avatars/p3.jpg" },
+  { name: "Luna", city: "花蓮", give: "冥想", take: "手作蠟燭", avatar: "/avatars/p4.jpg" },
 ];
 
 function CommunityPreview() {
@@ -238,7 +250,13 @@ function CommunityPreview() {
             key={m.name}
             className="flex flex-col items-center gap-3 md:gap-4 rounded-2xl bg-white p-4 md:p-6"
           >
-            <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-brand-medium" />
+            <Image
+              src={m.avatar}
+              alt={m.name}
+              width={64}
+              height={64}
+              className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover"
+            />
             <h3 className="font-serif text-base md:text-lg font-semibold text-text-dark">
               {m.name}
             </h3>
