@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/primochiang/Documents/claudeProject/tung_hua/logo-1.png)",
+      "Bash(sips -c 700 2200 /Users/primochiang/Documents/claudeProject/tung_hua/logo-1.png --out /Users/primochiang/Documents/claudeProject/tung_hua/logo-cropped.png)",
+      "Bash(python3 -c \"import sys,json; data=json.loads\\(json.loads\\(sys.stdin.read\\(\\)\\)[0][''''text'''']\\); items=[x for x in data if x.get\\(''''id''''\\)==''''0DiBI'''']; print\\(json.dumps\\(items, indent=2\\)\\)\")",
+      "Bash(npx:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm install:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
