@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, Noto_Serif_TC } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -10,6 +10,12 @@ const inter = Inter({
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
+});
+
+const notoSerifTC = Noto_Serif_TC({
+  variable: "--font-noto-serif",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-Hant">
-      <body className={`${inter.variable} ${playfair.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${playfair.variable} ${notoSerifTC.variable} antialiased`}
+      >
         {children}
       </body>
     </html>
